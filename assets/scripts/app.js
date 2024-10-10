@@ -8,26 +8,37 @@ function getUserNumberInput() {
 function createAndWriteOutput(operator, resultBeforeCal, calNumber) {
   const calcDescription = `${resultBeforeCal}${operator}${calNumber}`;
   outputResult(currentResult, calcDescription);
-
 }
 
 function add() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   currentResult = currentResult + enteredNumber;
- 
+  createAndWriteOutput('+', initialResult, enteredNumber);
 }
 
 function subtract() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   currentResult = currentResult - enteredNumber;
-  createAndWriteOutput('-',initialResult, enteredNumber);
+  createAndWriteOutput('-', initialResult, enteredNumber);
 }
 
-function multiply() {}
+function multiply() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult * enteredNumber;
+  createAndWriteOutput('*', initialResult, enteredNumber);
+}
 
-function divide() {}
+function divide() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult / enteredNumber;
+  createAndWriteOutput('/', initialResult, enteredNumber);
+}
 
 addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
+multiplyBtn.addEventListener('click', multiply);
+divideBtn.addEventListener('click', divide);
